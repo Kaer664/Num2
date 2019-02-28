@@ -1,16 +1,16 @@
 package edevelopmentandroidcompanydomain.myapplication;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -121,14 +121,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      */
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent=null;
         switch (i){
             case 0:
+                intent=new Intent(this,AccountActivity.class);
+                startActivity(intent);
                 break;
             case 1:
                 break;
             case 2:
                 break;
             case 3:
+                intent=new Intent(this,BusQueryActivity.class);
+                startActivity(intent);
                 break;
         }
     }
