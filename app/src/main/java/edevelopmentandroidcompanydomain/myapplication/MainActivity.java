@@ -1,5 +1,6 @@
 package edevelopmentandroidcompanydomain.myapplication;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -127,6 +128,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 1:
                 break;
             case 2:
+                Intent intent=new Intent(MainActivity.this,ParkinglotActivity.class);
+                startActivity(intent);
                 break;
             case 3:
                 break;
