@@ -205,6 +205,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         map4.put("tvText","公交查询");
         left_data.add(map4);
 
+        Map<String,Object> map5=new HashMap<>();
+        map5.put("img1",R.drawable.item_left);
+        map5.put("tvText","道路环境");
+        left_data.add(map5);
+
         SimpleAdapter sa=new SimpleAdapter(this,left_data,R.layout.left_list_item,
                 new String[]{"img1","tvText"},new int[]{R.id.left_img1,R.id.left_tv1});
         leftListView.setAdapter(sa);
@@ -227,6 +232,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
+                intent=new Intent(this,RoadTrafficLightActivity.class);
+                startActivity(intent);
                 break;
             case 2:
                 intent=new Intent(MainActivity.this,ParkinglotActivity.class);
@@ -235,6 +242,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 3:
                 intent=new Intent(this,BusQueryActivity.class);
                 startActivity(intent);
+                break;
+            case 4:
                 break;
         }
     }

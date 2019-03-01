@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:background="#000"
+android:layout_height="wrap_content">
+
+<TableRow
+    android:layout_width="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:layout_marginBottom="1dp"
+    android:layout_height="30dp">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/tv_item_road"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:background="#fff"
+        android:text="文本1"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/tv_item_red_time"
+        android:layout_marginLeft="1dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:background="#fff"
+        android:text="文本1"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/tv_item_green_time"
+        android:layout_marginLeft="1dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:background="#fff"
+        android:text="文本1"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/tv_item_yellow_time"
+        android:layout_marginLeft="1dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:background="#fff"
+        android:text="文本1"/>
+</TableRow>
+</TableLayout>
