@@ -7,4 +7,11 @@
         <item>测试4</item>
         <item>测试5</item>
     </string-array>
+
+    <string-array name="road_traffic_sort">
+        <item>红灯升序</item>
+        <item>红灯降序</item>
+        <item>绿灯升序</item>
+        <item>绿灯降序</item>
+    </string-array>
 </resources>
