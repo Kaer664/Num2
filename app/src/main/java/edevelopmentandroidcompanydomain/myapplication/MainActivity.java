@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,14 +29,13 @@ import util.Address;
 import util.HttpUtil;
 
 //OnItemClickListener
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     private ListView leftListView;
     //底部右侧的TextView
-    private TextView tvNum1Bus1, tvNum1Bus2, tvNum2Bus1, tvNum2Bus2;
+    private TextView tvNum1Bus1,tvNum1Bus2,tvNum2Bus1,tvNum2Bus2;
     //底部左侧的TextView 主要表示环境的数值
-    private TextView tvPMValue, tvTemperatureValue, tvHumidityValue, tvCO2Value;
-
+    private TextView tvPMValue,tvTemperatureValue,tvHumidityValue,tvCO2Value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,8 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     break;
                 case HANDLER_ERROR_INT:
                     break;
-            }
-            ;
+            };
         }
     };
 
@@ -172,67 +171,70 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void init() {
-        tvNum1Bus1 = findViewById(R.id.tvNum1Bus1);
-        tvNum1Bus2 = findViewById(R.id.tvNum1Bus2);
-        tvNum2Bus1 = findViewById(R.id.tvNum2Bus1);
-        tvNum2Bus2 = findViewById(R.id.tvNum2Bus2);
+        tvNum1Bus1=findViewById(R.id.tvNum1Bus1);
+        tvNum1Bus2=findViewById(R.id.tvNum1Bus2);
+        tvNum2Bus1=findViewById(R.id.tvNum2Bus1);
+        tvNum2Bus2=findViewById(R.id.tvNum2Bus2);
 
-        tvPMValue = findViewById(R.id.tvPMValue);
-        tvTemperatureValue = findViewById(R.id.tvTemperatureValue);
-        tvHumidityValue = findViewById(R.id.tvHumidityValue);
-        tvCO2Value = findViewById(R.id.tvCO2Value);
+        tvPMValue=findViewById(R.id.tvPMValue);
+        tvTemperatureValue=findViewById(R.id.tvTemperatureValue);
+        tvHumidityValue=findViewById(R.id.tvHumidityValue);
+        tvCO2Value=findViewById(R.id.tvCO2Value);
     }
 
-    List<Map<String, Object>> left_data = new ArrayList<>();
-
+    List<Map<String,Object>> left_data=new ArrayList<>();
     private void initLeft() {
-        leftListView = findViewById(R.id.leftListView);
-        Map<String, Object> map = new HashMap<>();
-        map.put("img1", R.drawable.item_left);
-        map.put("tvText", "我的座驾");
-        left_data.add(map);
+        leftListView=findViewById(R.id.leftListView);
+            Map<String,Object> map=new HashMap<>();
+            map.put("img1",R.drawable.item_left);
+            map.put("tvText","我的座驾");
+            left_data.add(map);
 
-        Map<String, Object> map2 = new HashMap<>();
-        map2.put("img1", R.drawable.item_left);
-        map2.put("tvText", "我的路况");
+        Map<String,Object> map2=new HashMap<>();
+        map2.put("img1",R.drawable.item_left);
+        map2.put("tvText","我的路况");
         left_data.add(map2);
 
-        Map<String, Object> map3 = new HashMap<>();
-        map3.put("img1", R.drawable.item_left);
-        map3.put("tvText", "停车查询");
+        Map<String,Object> map3=new HashMap<>();
+        map3.put("img1",R.drawable.item_left);
+        map3.put("tvText","停车查询");
         left_data.add(map3);
 
-        Map<String, Object> map4 = new HashMap<>();
-        map4.put("img1", R.drawable.item_left);
-        map4.put("tvText", "公交查询");
+        Map<String,Object> map4=new HashMap<>();
+        map4.put("img1",R.drawable.item_left);
+        map4.put("tvText","公交查询");
         left_data.add(map4);
 
-        SimpleAdapter sa = new SimpleAdapter(this, left_data, R.layout.left_list_item,
-                new String[]{"img1", "tvText"}, new int[]{R.id.left_img1, R.id.left_tv1});
+        SimpleAdapter sa=new SimpleAdapter(this,left_data,R.layout.left_list_item,
+                new String[]{"img1","tvText"},new int[]{R.id.left_img1,R.id.left_tv1});
         leftListView.setAdapter(sa);
         leftListView.setOnItemClickListener(this);
     }
 
     /**
      * 这个方法主要时用于ListView的item的点击事件
-     *
      * @param adapterView
      * @param view
-     * @param i           点击的条目数   emmmmm现在方法大概只用到这个参数
+     * @param i  点击的条目数   emmmmm现在方法大概只用到这个参数
      * @param l
      */
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (i) {
+        Intent intent=null;
+        switch (i){
             case 0:
+                intent=new Intent(this,AccountActivity.class);
+                startActivity(intent);
                 break;
             case 1:
                 break;
             case 2:
-                Intent intent=new Intent(MainActivity.this,ParkinglotActivity.class);
+                intent=new Intent(MainActivity.this,ParkinglotActivity.class);
                 startActivity(intent);
                 break;
             case 3:
+                intent=new Intent(this,BusQueryActivity.class);
+                startActivity(intent);
                 break;
         }
     }
